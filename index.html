@@ -13,14 +13,23 @@
     <header>
         <h1>Awesome Startup Employee Directory</h1>
     </header>
-    <section id="employee-directory">
+    <main id="employee-directory">
         <!-- Section will populate with API data providing employee img, name, email & city.
             12 results.
             Overlay upon click includes further details - phone, address, DOB.
         -->
-    </section>
+    </main>
+    <!-- Modal for overlaying upon user clicking employee card for more info-->
+    <div class="overlay hidden">
+        <div class="employee-modal">
+            <button class="close-modal">X</button>
+            <div class="employee-modal-content">
+                <!-- Section will populate with further employee details-->
+            </div>
+        </div>
+    </div>
 </body>
 
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </html>

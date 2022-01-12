@@ -16,5 +16,38 @@ body {
 }
 
 h1 {
+    margin: 0.5em;
     color: var(--first-color);
 }
+
+.hidden {
+    display: none;
+}
+
+#employee-directory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-column-gap: 2em;
+    grid-row-gap: 2em ;
+    padding: 3em;
+}
+
+.card {
+    display:flex;
+    background-color: var(--third-color);
+    border: solid black 0.1em;
+    border-radius: 0.2em;
+    height: 9em;
+    width: 20em;
+    box-shadow: 2.5px 2.5px 3px rgb(51, 51, 51);
+}
+
+.avatar {
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+}
+
+.employee-info {
+}
+
