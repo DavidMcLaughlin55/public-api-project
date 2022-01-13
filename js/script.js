@@ -31,6 +31,7 @@ function generateEmployees(data) {
 
 
     employees.forEach(employee => {
+        let index = employee.index;
         let picture = employee.picture;
         let firstName = employee.name.first;
         let lastName = employee.name.last;
@@ -39,8 +40,8 @@ function generateEmployees(data) {
         let state = employee.location.state;
 
         employeesHTML += `
-        <div class="card">
-            <img class="avatar" src="${picture.medium}" alt="member" />
+        <div class="card" data="${index}">
+            <img class="avatar" src="${picture.large}" alt="member" />
             <div class="employee-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <p class="email">${email}</p>
@@ -51,25 +52,27 @@ function generateEmployees(data) {
     });
 
     employeeDirectory.innerHTML = employeesHTML;
+    return employees
 }
 
 /* generateModal function
 -Generates modal for employee user clicked on to provide further detailed information.
 */
 
-/*
-function generateModal(employee) {
-    const modalHTML = `
-    <img class="avatar" src="${}" alt="member">
-    <div class="employee-info">
-        <h2 class="name">${} ${}</h2>
-        <p class="email">${}</p>
-        <p class="address">${}, ${}</p>
-        </hr>
-        <p>${}</p>
-        <p>${}</p>
-    `;
+function generateModal(e) {
+    console.log(e.target.data);
+    let employee = e.target.data;
+    // const modalHTML = `
+    // <img class="avatar" src="${}" alt="member">
+    // <div class="employee-info">
+    //     <h2 class="name">${} ${}</h2>
+    //     <p class="email">${}</p>
+    //     <p class="address">${}, ${}</p>
+    //     </hr>
+    //     <p>${}</p>
+    //     <p>${}</p>
+    // `;
 
 }
 
-*/
+employeeDirectory.addEventListener('click', generateModal)

@@ -2,6 +2,7 @@
     --first-color: #000;
     --second-color:#fff;
     --third-color: #00f999;
+    --fourth-color: #bdffe6;
 }
 
 /*-------SET-UP-------*/
@@ -13,11 +14,16 @@
 
 body {
     background-color: var(--second-color);
+    color: var(--first-color);
+    font-family: 'Bebas Neue', cursive;
+}
+
+header {
+    text-align: center;
 }
 
 h1 {
     margin: 0.5em;
-    color: var(--first-color);
 }
 
 .hidden {
@@ -28,26 +34,60 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-column-gap: 2em;
-    grid-row-gap: 2em ;
+    grid-row-gap: 2em;
     padding: 3em;
 }
 
 .card {
-    display:flex;
+    display: flex;
+    flex-direction: row;
     background-color: var(--third-color);
     border: solid black 0.1em;
     border-radius: 0.2em;
-    height: 9em;
+    height: 8em;
     width: 20em;
     box-shadow: 2.5px 2.5px 3px rgb(51, 51, 51);
 }
 
+.card:hover {
+    cursor: pointer;
+    background-color: var(--fourth-color);
+}
+
 .avatar {
-    height: 6em;
-    width: 6em;
+    height: auto;
+    width: auto;
+    margin: 1em;
     border-radius: 50%;
+    box-shadow: inherit;
 }
 
 .employee-info {
+    align-self: center;
+    inline-size: min-content;
+    width: auto;
 }
 
+.employee-info p {
+    margin-top: 2px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.name {
+    font-size: 24px ;
+}
+
+.email {
+    font-size: 11px;
+}
+
+.address {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 700px){
+    header {
+        text-align: left;
+    }
+}
