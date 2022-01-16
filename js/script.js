@@ -50,7 +50,7 @@ function generateEmployees(data) {
     `
     });
 
-    employeeDirectory.innerHTML = employeesHTML;
+    employeeDirectory.insertAdjacentHTML('afterbegin', employeesHTML);
 }
 
 /* generateModal function
@@ -77,7 +77,6 @@ function generateModal(index) {
     console.log(street.name);
     console.log(date);
 
-
     const modalHTML = `
     <img class="avatar" src="${picture.large}" alt="member" />
     <div class="contact-info">
@@ -92,7 +91,7 @@ function generateModal(index) {
     `;
 
     overlay.classList.remove('hidden');
-    employeeModal.innerHTML = modalHTML;
+    employeeModal.insertAdjacentHTML('afterbegin', modalHTML);
 }
 
 /* selectEmployee function
@@ -107,5 +106,9 @@ function selectEmployee(e) {
     }
 }
 
+
+//EVENT LISTENERS
 employeeDirectory.addEventListener('click', selectEmployee)
-overlayBtn.addEventListener('click', () => overlay.classList.add('hidden'));
+overlayBtn.addEventListener('click', (e) => {
+    overlay.classList.add('hidden');
+});
