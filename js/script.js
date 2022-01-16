@@ -3,8 +3,8 @@ const randomUserAPI = 'https://randomuser.me/api/?results=12';
 
 const employeeDirectory = document.getElementById('employee-directory');
 const overlay = document.querySelector('.overlay');
-const employeeModal = document.querySelector('.employee-modal')
 const overlayBtn = document.querySelector('.close-modal');
+const modalContent = document.querySelector('.modal-content');
 
 let employees = [];
 
@@ -50,7 +50,7 @@ function generateEmployees(data) {
     `
     });
 
-    employeeDirectory.insertAdjacentHTML('afterbegin', employeesHTML);
+    employeeDirectory.insertAdjacentHTML('beforeend', employeesHTML);
 }
 
 /* generateModal function
@@ -58,10 +58,8 @@ function generateEmployees(data) {
 */
 
 function generateModal(index) {
-    console.log(index);
 
     let employee = employees[index];
-    console.log(employee);
 
     let picture = employee.picture;
     let firstName = employee.name.first;
@@ -74,8 +72,7 @@ function generateModal(index) {
     let phone = employee.phone;
     let date = new Date(employee.dob.date);
 
-    console.log(street.name);
-    console.log(date);
+    console.log(phone);
 
     const modalHTML = `
     <img class="avatar" src="${picture.large}" alt="member" />
@@ -91,7 +88,7 @@ function generateModal(index) {
     `;
 
     overlay.classList.remove('hidden');
-    employeeModal.insertAdjacentHTML('afterbegin', modalHTML);
+    modalContent.insertAdjacentHTML('beforeend', modalHTML);
 }
 
 /* selectEmployee function
@@ -109,6 +106,8 @@ function selectEmployee(e) {
 
 //EVENT LISTENERS
 employeeDirectory.addEventListener('click', selectEmployee)
+
 overlayBtn.addEventListener('click', (e) => {
     overlay.classList.add('hidden');
+    modalContent.innerHTML = '';
 });
