@@ -72,8 +72,6 @@ function generateModal(index) {
     let phone = employee.phone;
     let date = new Date(employee.dob.date);
 
-    console.log(phone);
-
     const modalHTML = `
     <img class="avatar" src="${picture.large}" alt="member" />
     <div class="contact-info">

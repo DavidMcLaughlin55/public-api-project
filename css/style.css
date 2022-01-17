@@ -1,8 +1,8 @@
 :root {
     --first-color: #000;
     --second-color:#fff;
-    --third-color: #00f999;
-    --fourth-color: #bdffe6;
+    --third-color: #ebf5f2;
+    --fourth-color: #b8b8b8;
 }
 
 /*-------SET-UP-------*/
@@ -29,6 +29,8 @@ h1 {
 .hidden {
     display: none;
 }
+
+/* Employee Directory Section */
 
 #employee-directory {
     display: grid;
@@ -84,6 +86,8 @@ h1 {
     font-weight: bold;
 }
 
+/* Overlay/ Modal Styling */
+
 .overlay {
     position: absolute;
     top: 0;
@@ -102,6 +106,10 @@ h1 {
     border: none;
     top: 10px;
     right: 10px;
+}
+
+.close-modal i:hover {
+    color: rgb(121, 118, 118);
 }
 
 .employee-modal {
@@ -127,6 +135,8 @@ h1 {
 .modal-content .avatar {
     border: solid black 2px;
 }
+
+/*Responsive Styling */
 
 @media screen and (min-width: 1080px){
     header {
